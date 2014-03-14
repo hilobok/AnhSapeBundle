@@ -1,0 +1,20 @@
+parameters:
+    anh_sape.sape_client.class: Anh\SapeBundle\Sape\SapeClient
+    anh_sape.twig.sape_extension.class: Anh\SapeBundle\Twig\SapeExtension
+    anh_sape.cache_dir: "%kernel.cache_dir%/sape"
+    anh_sape.options.sape_client: { charset: 'utf8' }
+
+services:
+    anh_sape.sape_client:
+        class: %anh_sape.sape_client.class%
+        arguments:
+            - %anh_sape.sape_user%
+            - %anh_sape.cache_dir%
+            - %anh_sape.options.sape_client%
+
+    anh_sape.twig.sape_extension:
+        class: %anh_sape.twig.sape_extension.class%
+        arguments:
+            - @anh_sape.sape_client
+        tags:
+            - { name: twig.extension }
