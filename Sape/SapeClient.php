@@ -19,6 +19,11 @@ class SapeClient extends \SAPE_client
             define('_SAPE_USER', $sapeUser);
         }
 
+        // ugly hack to prevent 'Undefined index' notice outside of request scope
+        if (!isset($_SERVER['SERVER_SOFTWARE'])) {
+            $_SERVER['SERVER_SOFTWARE'] = 'Unknown';
+        }
+
         parent::SAPE_client($options);
     }
 
