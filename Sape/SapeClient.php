@@ -24,6 +24,14 @@ class SapeClient extends \SAPE_client
             $_SERVER['SERVER_SOFTWARE'] = 'Unknown';
         }
 
+        if (!isset($_SERVER['REQUEST_URI'])) {
+            $_SERVER['REQUEST_URI'] = '/';
+        }
+
+        if (!isset($_SERVER['HTTP_HOST'])) {
+            $_SERVER['HTTP_HOST'] = 'localhost';
+        }
+
         parent::SAPE_client($options);
     }
 
