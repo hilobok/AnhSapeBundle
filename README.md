@@ -30,9 +30,9 @@ public function registerBundles()
 ## Configuration
 
 ```yaml
-parameters:
-    anh_sape.sape_user: '...' # your sape user id (f.e. 80e20e4a72a1d09895763b4b1bc98e63)
-    anh_sape.options.sape_client: { charset: 'utf8' } # options for SAPE_client
+anh_sape:
+    user: '...' # your sape user id (f.e. 80e20e4a72a1d09895763b4b1bc98e63)
+    client_options: { charset: 'utf8' } # options for SAPE_client, not required, default: {charset: 'utf8'}
 ```
 
 ## Usage
