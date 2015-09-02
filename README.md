@@ -30,6 +30,7 @@ public function registerBundles()
 ## Configuration
 
 ```yaml
+#config.yml
 anh_sape:
     user: '...' # your sape user id (f.e. 80e20e4a72a1d09895763b4b1bc98e63)
     client_options: { charset: 'utf8' } # options for SAPE_client, not required, default: {charset: 'utf8'}
