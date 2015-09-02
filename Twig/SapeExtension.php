@@ -7,6 +7,11 @@ use Anh\SapeBundle\Sape\SapeClient;
 class SapeExtension extends \Twig_Extension
 {
     /**
+     * @var SapeClient
+     */
+    private $sapeClient;
+
+    /**
      * Constructor
      */
     public function __construct(SapeClient $sapeClient)
@@ -21,8 +26,8 @@ class SapeExtension extends \Twig_Extension
     {
         return array(
             // SAPE_client
-            new \Twig_SimpleFunction('sape_return_links', array($this, 'return_links')),
-            new \Twig_SimpleFunction('sape_return_block_links', array($this, 'return_block_links')),
+            new \Twig_SimpleFunction('sape_return_links', array($this, 'returnLinks')),
+            new \Twig_SimpleFunction('sape_return_block_links', array($this, 'returnBlockLinks')),
         );
     }
 
@@ -34,12 +39,24 @@ class SapeExtension extends \Twig_Extension
         return 'anh_sape';
     }
 
-    public function return_links($n = null, $offset = 0, $options = null)
+    /**
+     * @param null $n
+     * @param int $offset
+     * @param null $options
+     * @return mixed
+     */
+    public function returnLinks($n = null, $offset = 0, $options = null)
     {
         return $this->sapeClient->return_links($n, $offset, $options);
     }
 
-    public function return_block_links($n = null, $offset = 0, $options = null)
+    /**
+     * @param null $n
+     * @param int $offset
+     * @param null $options
+     * @return mixed
+     */
+    public function returnBlockLinks($n = null, $offset = 0, $options = null)
     {
         return $this->sapeClient->return_block_links($n, $offset, $options);
     }
