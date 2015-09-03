@@ -17,16 +17,14 @@
     "minimum-stability": "stable",
 
     "autoload": {
-        "psr-0": {
-            "Anh\\SapeBundle": ""
+        "psr-4": {
+            "Anh\\SapeBundle\\": ""
         }
     },
 
-    "target-dir": "Anh/SapeBundle",
-
     "extra": {
         "branch-alias": {
-            "dev-master": "1.0-dev"
+            "dev-master": "2.0.x-dev"
         }
     }
 }
