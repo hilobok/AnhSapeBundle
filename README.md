@@ -7,7 +7,7 @@ Bundle provides symfony integration for sape.ru
 Install via composer with command:
 
 ```bash
-$ php composer.phar require 'anh/sape-bundle:~1.0'
+$ php composer.phar require 'anh/sape-bundle:~2.0'
 ```
 
 Enable bundle in the kernel:
