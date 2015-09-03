@@ -28,10 +28,10 @@ class AnhSapeExtension extends Extension
         $loader->load('services.yml');
 
         $container->setDefinition('anh_sape.sape_client', new Definition(
-            SapeClient::class,
+            'Anh\SapeBundle\Sape\SapeClient',
             array(
                 $config['user'],
-                $container->getParameterBag()->get('kernel.cache_dir') . '/sape',
+                $container->getParameter('kernel.cache_dir') . '/sape',
                 $config['client_options']
             )
         ));
