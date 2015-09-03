@@ -4,9 +4,19 @@ namespace Anh\SapeBundle\Sape;
 
 class SapeClient extends \SAPE_client
 {
+    /**
+     * @var string
+     */
+    private $cacheDir;
+
+    /**
+     * @param $sapeUser
+     * @param $cacheDir
+     * @param null $options
+     * @throws \Exception
+     */
     public function __construct($sapeUser, $cacheDir, $options = null)
     {
-        $this->sapeUser = $sapeUser;
         $this->cacheDir = $cacheDir;
 
         if (!is_dir($cacheDir)) {
@@ -35,12 +45,15 @@ class SapeClient extends \SAPE_client
         parent::SAPE_client($options);
     }
 
+    /**
+     * @return string
+     */
     public function _get_db_file()
     {
         if ($this->_multi_site) {
             return $this->cacheDir . '/' . $this->_host . '.links.db';
-        } else {
-            return $this->cacheDir . '/links.db';
         }
+
+        return $this->cacheDir . '/links.db';
     }
 }
