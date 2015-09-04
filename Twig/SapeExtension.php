@@ -26,8 +26,8 @@ class SapeExtension extends \Twig_Extension
     {
         return array(
             // SAPE_client
-            new \Twig_SimpleFunction('sape_return_links', array($this, 'returnLinks')),
-            new \Twig_SimpleFunction('sape_return_block_links', array($this, 'returnBlockLinks')),
+            new \Twig_SimpleFunction('sape_return_links', array($this, 'returnLinks'), array('is_safe' => array('html'))),
+            new \Twig_SimpleFunction('sape_return_block_links', array($this, 'returnBlockLinks'), array('is_safe' => array('html'))),
         );
     }
 
