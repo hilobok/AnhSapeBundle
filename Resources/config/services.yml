@@ -2,6 +2,6 @@ services:
     anh_sape.twig.sape_extension:
         class: Anh\SapeBundle\Twig\SapeExtension
         arguments:
-            - @anh_sape.sape_client
+            - "@anh_sape.sape_client"
         tags:
             - { name: twig.extension }
